@@ -4,7 +4,7 @@ const coinSound = new Audio('coin.mp3');
 const fondoMusic = new Audio('fondo.mp3');
 fondoMusic.loop = true;
 fondoMusic.volume = 0.4;
-fondoMusic.play();
+
 const ctx = canvas.getContext('2d');
 // Objt para rastrear teclas direccionales
 let keys= {};
@@ -80,6 +80,7 @@ function drawRect(obj) {
 function update(){
     const level = levels[currentLevel];
 
+    fondoMusic.play();
     //movimiento de jugador segun las teclas presionadas
     if(keys['ArrowUp']) player.y -= player.speed;
     if(keys['ArrowDown']) player.y += player.speed;
